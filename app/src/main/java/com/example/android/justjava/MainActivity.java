@@ -21,6 +21,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private int capsOfCoffees = 0;
     private int priceOfCup = 5;
+    private int stepCoffeesChange = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +41,16 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
-        capsOfCoffees=capsOfCoffees+1;
+        capsOfCoffees=capsOfCoffees+ stepCoffeesChange;
         display(capsOfCoffees);
+
     }
     /**
     * This method is called when the mines button is clicked.
     */
 
     public void decrement(View view) {
-        capsOfCoffees=capsOfCoffees-1;
+        capsOfCoffees=capsOfCoffees- stepCoffeesChange;
         display(capsOfCoffees);
     }
 
@@ -73,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         else{
             Toast.makeText(this, "Negative number of orders !", Toast.LENGTH_LONG).show();
             capsOfCoffees=0;
+            priceTextView.setText("$"+priceOfCup);
 
-            priceTextView.setText(""+capsOfCoffees);
         }
     }
 
