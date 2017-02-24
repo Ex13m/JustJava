@@ -24,32 +24,46 @@
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="normal|bold" />
-    <Button
-        android:id="@+id/minus_btn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:padding="8sp"
-        android:text="-"
-        android:onClick="decrement"
-        />
 
-    <TextView
-        android:id="@+id/quantity_text_view"
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8sp"
-        android:text="0"
-        android:textSize="16sp" />
+        android:layout_marginBottom="16sp"
+        >
 
-    <Button
-        android:id="@+id/plus_btn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:padding="8sp"
-        android:text="+"
-        android:textAllCaps="true"
-        android:onClick="increment"
-        />
+        <Button
+            android:id="@+id/minus_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="8sp"
+            android:text="-"
+            android:onClick="decrement"
+            />
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8sp"
+            android:text="0"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/plus_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="8sp"
+            android:text="+"
+            android:textAllCaps="true"
+            android:onClick="increment"
+            />
+
+
+    </LinearLayout>
+
+
 
 
     <TextView

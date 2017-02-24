@@ -19,8 +19,8 @@ import android.widget.Toast;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    int capsOfCoffees = 1;
-
+    private int capsOfCoffees = 0;
+    private int priceOfCup = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,23 +32,23 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         //display(capsOfCoffees);
-        displayPrice(capsOfCoffees * 5-5);
+        displayPrice(capsOfCoffees * priceOfCup);
         display(capsOfCoffees);
     }
     /**
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
-
-        display(capsOfCoffees++);
+        capsOfCoffees=capsOfCoffees+1;
+        display(capsOfCoffees);
     }
     /**
     * This method is called when the mines button is clicked.
     */
 
     public void decrement(View view) {
-
-        display(capsOfCoffees--);
+        capsOfCoffees=capsOfCoffees-1;
+        display(capsOfCoffees);
     }
 
 
@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         if (number>0) {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-           capsOfCoffees=1;
-
+           capsOfCoffees=0;
+           display(capsOfCoffees);
         }
         else{
             Toast.makeText(this, "Negative number of orders !", Toast.LENGTH_LONG).show();
-            capsOfCoffees=1;
+            capsOfCoffees=0;
 
-            priceTextView.setText(""+0);
+            priceTextView.setText(""+capsOfCoffees);
         }
     }
 
